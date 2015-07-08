@@ -1,18 +1,22 @@
+import java.util.ArrayList;
 import java.util.Random;
 
 public class mainX {
 
 	public static void main(String[] args) 
 	{
-		for(int x = 0; x <= 9000; x++) 
+		ArrayList<stock> market = new ArrayList<stock>();
+		
+		for(int x = 1; x <= 9000; x++) 
 		{
 			stock s = new stock();
 			
-			System.out.println("get price of stock " + x +" from main:  " +  s.getPrice() );
-			
-			s.setPrice(45.00);
-			System.out.println("now the price of stock is " + s.getPrice());
+			market.add(s);//should have a market of 9,000 stocks...
+			double p =   s.getPrice();
+			System.out.println("price of that is " + p);
 		}
+		
+		System.out.println("current size of market is " + market.size() + " stocks");
 	}
 
 	

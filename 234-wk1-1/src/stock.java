@@ -11,7 +11,9 @@ public class stock {
 	
 	private double price;
 	private String symbol; //a few letters, within the limit of the exchange (4-5)
-	
+	public int numberOfStock; //represents total number of stock initially available
+	public int numberOfStockAvailable; 
+	  
 	/**
 	 * constructor: the first method thrown by the object when it's created
 	 */
@@ -19,10 +21,18 @@ public class stock {
 	{
 		this.price = getInitialPrice();//should initialize a stock's price
 		this.symbol = getIntialSymbol();
-//		
+		this.numberOfStock = setIntialStock();
+		this.numberOfStockAvailable = this.numberOfStock;//no sales yet
 		System.out.println("price of initial equity is " + this.price 
 				+ " and the symbol is " + this.symbol);//prove correct init
 		
+	}
+	private int setIntialStock() 
+	{
+		Random r = new Random();
+		
+		
+		return r.nextInt();
 	}
 	/**
 	 * this function declares the symbol's name, per random numbers
@@ -80,6 +90,11 @@ public class stock {
 	public void setPrice(double p)
 	{
 		this.price = p;
+	}
+	
+	public String getSymbol()
+	{
+		return this.symbol; //the symbol variable associated with the stock
 	}
 	
 	public static String generateLetter(double n)

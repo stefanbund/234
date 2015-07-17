@@ -16,6 +16,10 @@ public class mainX {
 			System.out.println("price of that is " + p);
 		}
 		
+		stock sample = market.get(1888);//
+		sample.getPrice();
+		sample.getSymbol();
+		
 		System.out.println("current size of market is " + market.size() + " stocks");
 		
 		Scanner sc = new Scanner(System.in);
@@ -41,15 +45,30 @@ public class mainX {
 				{
 					System.out.println("how many shares to buy: ");
 					int toBuy = sc.nextInt();
-					if(toBuy < thisStock.numberOfStockAvailable)
-					{
+//					if(toBuy < thisStock.numberOfStockAvailable)
+//					{
 						thisStock.numberOfStockAvailable -= toBuy;
 						System.out.println("just executed your buy, for ");
 						System.out.println(" " + toBuy + " shares at $" + thisStock.getPrice());
-					}
+						
+						double pr = thisStock.getPrice();
+						Transaction t = new Transaction(pr, toBuy); 
+						if(t != null)
+						{
+						thisStock.addToMyLog(t);//adds the latest sale information, to that stock's log
+						thisStock.printTheTransactionLog();
+						}
+						
+					
+					//}
 				}
 			}
+			
+			
 		}
+		
+
+		
 		
 		
 	}

@@ -4,6 +4,7 @@
  * @author stefanbund
  *
  */
+import java.util.ArrayList;
 import java.util.Random;
 
 
@@ -13,7 +14,7 @@ public class stock {
 	private String symbol; //a few letters, within the limit of the exchange (4-5)
 	public int numberOfStock; //represents total number of stock initially available
 	public int numberOfStockAvailable; 
-	  
+	private ArrayList<Transaction> log;
 	/**
 	 * constructor: the first method thrown by the object when it's created
 	 */
@@ -33,6 +34,32 @@ public class stock {
 		
 		
 		return r.nextInt();
+	}
+	public void addToMyLog(Transaction t)
+	{
+		this.log.add(t);
+	}
+	
+	public void printTheTransactionLog()
+	{
+		System.out.println("Transaction History: ");
+		for(Transaction t : this.log)
+		{
+			System.out.println("price: "+   t.getPrice() + " volume: " + t.getVolume());
+		}
+	}
+	
+	/**
+	 * @return the log
+	 */
+	public ArrayList<Transaction> getLog() {
+		return log;
+	}
+	/**
+	 * @param log the log to set
+	 */
+	public void setLog(ArrayList<Transaction> log) {
+		this.log = log;
 	}
 	/**
 	 * this function declares the symbol's name, per random numbers

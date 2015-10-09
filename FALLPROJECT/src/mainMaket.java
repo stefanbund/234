@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * 
  */
@@ -15,8 +17,14 @@ public class mainMaket {
 	{
 		Market m = new Market();
 		//put the comments at the end of the line, not above
-
+        ArrayList<Stock> l =  m.getIndex();
 		
+        for (Stock s : l)
+        {
+        	System.out.println("stock name is " +s.getSymbol());
+        	System.out.println("stock price is " + s.getPrice());
+        	System.out.println();
+        }
 	}
 
 }

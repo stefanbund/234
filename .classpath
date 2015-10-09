@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="openingNight/src"/>
+	<classpathentry kind="src" path="summer2015/234-wk1-1/src"/>
+	<classpathentry kind="src" path="wk1/WKOne-Two SOLVED/src"/>
+	<classpathentry kind="src" path="wk1/WKOne-Two/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="wk1/WKOne-Two SOLVED/bin"/>
+</classpath>

@@ -10,6 +10,7 @@ import java.util.ArrayList;
  */
 public class Market {
 	private ArrayList<Stock> index = new ArrayList<Stock>();
+	//private Stock l = new Stock();
 
 	/**
 	 * @return the index

@@ -6,7 +6,7 @@ import java.util.Random;
 public class Stock {
 	private double lastSalePrice; 
 	private double price; 
-	private String symbol; //string is a word, or collectoin of letters/characters
+	private String symbol = ""; //string is a word, or collectoin of letters/characters
 	private int ipoQty; //the # of stocks initially sold by their first owner/bank
 	private double lastSaleVolume; 
 	private String industry; //the industry the stock is in

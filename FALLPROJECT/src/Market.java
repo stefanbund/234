@@ -9,9 +9,30 @@ import java.util.ArrayList;
  *
  */
 public class Market {
-	private ArrayList<Stock> index = new ArrayList<Stock>();
-	//private Stock l = new Stock();
+	
+	private ArrayList<Stock> index = new ArrayList<Stock>();//generic syntax for creating al's
 
+	/**
+	 * ANYTIME I WANT TO ADD A NEW STOCK TO THE MARKET (FOR SALE), I CALL THIS:
+	 * @param stock
+	 */
+	public void addAStockToTheIndex(Stock stock)
+	{
+		index.add(stock);
+	}
+	
+	/**
+	 * PRINT OUT ALL THE STOCKS IN THE INDEX
+	 */
+	public void printTheIndex()
+	{
+		for(Stock s : index)//exemplifies how to iterate an array of objects successfully
+		{
+			System.out.println("stock symbol: " + s.getSymbol() + ", price: "+ s.getPrice());
+		}
+	}
+	
+	//private Stock l = new Stock();
 	/**
 	 * @return the index
 	 */
@@ -31,25 +52,18 @@ public class Market {
 	 */
 	public Market() 
 	{
-		//initializeAllStocksInSimulation();		//set up the market
-		ArrayList<Stock> l = new ArrayList<Stock>();
-		l = initializeAllStocksInSimulation();
-		setIndex(l);
+		initializeAllStocksInSimulation(); //creates the stock market in one fell swoop
+		printTheIndex();
 	}
 
-	private ArrayList<Stock> initializeAllStocksInSimulation() 
+	private void initializeAllStocksInSimulation() 
 	{
-		ArrayList<Stock> ind = new ArrayList<Stock>();
 		
 		for(int i = 0 ; i <= 6000; i++)
 		{
 			Stock s = new Stock();//creates one stock
-//			System.out.println("the new price of stock " + s.getSymbol() + " is " + s.getPrice());
-//			System.out.println("the ipo float was " + s.getIpoQty());
-//			System.out.println();
-			ind.add(s); //!
+			index.add(s); //6,000 x
 		}
-		return ind; 
 	}
 
 }

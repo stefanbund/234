@@ -1,9 +1,4 @@
 import java.util.Random;
-
-/**
- * 
- */
-
 /**
  * @author stefanbund
  *
@@ -14,6 +9,7 @@ public class Stock {
 	private String symbol; //string is a word, or collectoin of letters/characters
 	private int ipoQty; //the # of stocks initially sold by their first owner/bank
 	private double lastSaleVolume; 
+	private String industry; //the industry the stock is in
 	
 	/**
 	 * set up the symbol, price ipoQty
@@ -60,7 +56,7 @@ public class Stock {
 
 
 	private String setRandomStockName() {
-		String s = "MEME";
+		String s = "MEME";//not really random
 		
 		return s;
 	}
@@ -144,6 +140,20 @@ public class Stock {
 	 */
 	public void setLastSaleVolume(double lastSaleVolume) {
 		this.lastSaleVolume = lastSaleVolume;
+	}
+
+	/**
+	 * @return the industry
+	 */
+	public String getIndustry() {
+		return industry;
+	}
+
+	/**
+	 * @param industry the industry to set
+	 */
+	public void setIndustry(String industry) {
+		this.industry = industry;
 	}
 
 }

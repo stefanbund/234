@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 
 public class Porfolio {
 	ArrayList<Transaction> portfolio = new ArrayList<Transaction>();
@@ -10,6 +12,20 @@ public class Porfolio {
 
 	
 	
+	}
+	
+	public void addStockToPortfolio(Transaction t)
+	{
+		portfolio.add(t);
+	}
+	
+	/**
+	 * 
+	 * print the portfolio
+	 */
+	public void printPortfolio()
+	{
+		
 	}
 
 }

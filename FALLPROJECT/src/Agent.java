@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class Agent {
 	public String agentID = "";
-	Porfolio p = new Portfolio();//what do we need for the portfolio?
+	Porfolio p = new Porfolio();//what do we need for the portfolio?
 	/**
 	 * first step, create an agent id for the agent
 	 */

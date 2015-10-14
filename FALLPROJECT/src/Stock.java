@@ -58,14 +58,43 @@ public class Stock {
  * set the name of the stock symbol
  * @return
  */
-	private String setRandomStockName() {
-		String s = "MEME";//not really random
+	private void setRandomStockName() {
+		//String s = "MEME";//not really random
 		
 		//1. grab a random integer, divide by 100,000,000
 		
 		//2. if the integer is between a certain set of numbers, return a string
+		for(int i = 0; i <=4; i++)
+		{
+			Random r = new Random();
+			double l = r.nextDouble();
+			symbol = symbol + generateLetter(l);
+		}
+		//return s;
+	}
+	
+	public static String generateLetter(double n)
+	{
 		
-		return s;
+		String l = "";//empty, or null, to begin
+		if(n <= 0.025 && n <= .05)
+		{
+			l = "A";
+		}
+		else if(n <= .05 && n <=.075)
+		{
+			l = "B";
+		}
+		else if(n <= .1 && n <=.125)
+		{
+			l = "C";
+		}
+		else if(n <=.125 && n<=.15)
+		{
+			l = "D";
+		}
+		System.out.println("value of n, random is " + n + ", hence my letter is " + l);
+		return l;
 	}
 
 

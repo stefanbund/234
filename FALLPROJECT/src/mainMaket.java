@@ -16,6 +16,10 @@ public class mainMaket {
 	public static void main(String[] args) 
 	{
 		Market m = new Market();//create the market right away
+		
+		Agent a = new Agent(); //buyer/sellers/traders
+		
+
 
 
 	}

@@ -54,9 +54,16 @@ public class Stock {
 		return price;
 	}
 
-
+/**
+ * set the name of the stock symbol
+ * @return
+ */
 	private String setRandomStockName() {
 		String s = "MEME";//not really random
+		
+		//1. grab a random integer, divide by 100,000,000
+		
+		//2. if the integer is between a certain set of numbers, return a string
 		
 		return s;
 	}

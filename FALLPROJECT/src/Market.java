@@ -28,7 +28,9 @@ public class Market {
 	{
 		for(Stock s : index)//exemplifies how to iterate an array of objects successfully
 		{
-			System.out.println("stock symbol: " + s.getSymbol() + ", price: "+ s.getPrice());
+			System.out.println("stock symbol: " + s.getSymbol() + 
+					", price: "+ s.getPrice() +
+					" with IPO buy volume " + s.getIpoQty());
 		}
 	}
 	

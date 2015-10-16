@@ -7,7 +7,7 @@ public class Stock {
 	private double lastSalePrice; 
 	private double price; 
 	private String symbol = ""; //string is a word, or collectoin of letters/characters
-	private int ipoQty; //the # of stocks initially sold by their first owner/bank
+	private int ipoQty; //"buy volume"
 	private double lastSaleVolume; 
 	private String industry; //the industry the stock is in
 	
@@ -16,8 +16,8 @@ public class Stock {
 	 */
 	public Stock() 
 	{	
-		String s = setRandomStockName(); //@TODO define what the stock needs to know when it's created
-		setSymbol(s);
+		setRandomStockName(); //@TODO define what the stock needs to know when it's created
+		//setSymbol(s);
 		
 		double x = setUpRandomPrice();
 		setPrice(x);

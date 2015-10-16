@@ -7,9 +7,9 @@ public class Transaction {
 	
 	private int numberBought;
 	
-	private String dateBought; 
-	
-	private String agentid; //who bought it
+//	private String dateBought; 
+//	
+//	private String agentid; //who bought it
 	
 	public Transaction() 
 	{

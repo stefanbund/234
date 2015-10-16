@@ -1,11 +1,11 @@
 
 public class Transaction {
 
-	private String symbolName;
+	public String symbolName;
 	
-	private double stockPrice;
+	public double stockPrice;
 	
-	private int numberBought;
+	public int numberBought;
 	
 //	private String dateBought; 
 //	

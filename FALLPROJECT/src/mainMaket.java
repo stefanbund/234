@@ -22,9 +22,16 @@ public class mainMaket {
 		
 		String l = provideTUI();
 							//this gives us 2 things, the market and a stock to look for
+		
 		searchForStock(l, m.getIndex());
+		
+		buyAStock();
 	}
 	
+	private static void buyAStock() {
+		
+	}
+
 	private static void searchForStock(String l, ArrayList<Stock> index) 
 	{
 		//get the stock in the index with the same name as the symbol I just typed in
@@ -36,6 +43,16 @@ public class mainMaket {
 				System.out.println("stock symbol: " +s.getSymbol() +
 						" last sold at price: " +s.getPrice() + 
 						" buy Volume: " + s.getIpoQty() );
+				Transaction t = new Transaction();
+				t.symbolName = s.getSymbol();
+				t.stockPrice = s.getPrice();
+				Scanner sc = new Scanner(System.in);
+				System.out.println("how many shares you wish to buy? ");
+				t.numberBought = sc.nextInt();
+				
+				Porfolio p = new Porfolio();
+				p.addStockToPortfolio(t);
+				p.printPortfolio(); //do this
 			}
 		}
 	}

@@ -23,8 +23,6 @@ public class mainMaket {
 		String l = provideTUI();
 							//this gives us 2 things, the market and a stock to look for
 		searchForStock(l, m.getIndex());
-
-
 	}
 	
 	private static void searchForStock(String l, ArrayList<Stock> index) 

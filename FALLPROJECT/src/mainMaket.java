@@ -23,14 +23,14 @@ public class mainMaket {
 		String l = provideTUI();
 							//this gives us 2 things, the market and a stock to look for
 		
-		//first, search for a stock by suppliying a string (give a string, get a stock)
+		//first, search for a stock by supplying a string (give a string, get a stock)
 		Stock s = searchForStockWithString(l, m.getIndex());
 		
 		//then, ask if they wish to buy the stock
 		
 		//if so, make a transaction from that stock:
 		
-		Transaction t = makeTransactionFromStock(Stock stock);
+		Transaction t = makeTransactionFromStock(s);
 		
 		//next, add that transaction to a portfolio, which you created in main
 		Porfolio p = new Porfolio();
@@ -43,34 +43,45 @@ public class mainMaket {
 		buyAStock();
 	}
 	
+	private static Transaction makeTransactionFromStock(Stock s) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private static Stock searchForStockWithString(String l,
+			ArrayList<Stock> index) 
+	{
+		return null;
+	}
+
 	private static void buyAStock() {
 		
 	}
 
-	private static void searchForStock(String l, ArrayList<Stock> index) 
-	{
-		//get the stock in the index with the same name as the symbol I just typed in
-		for(Stock s : index)
-		{
-			if(l.equalsIgnoreCase(s.getSymbol()))
-			{
-				System.out.println("bingo, I just found the stock I need..."); //worked!
-				System.out.println("stock symbol: " +s.getSymbol() +
-						" last sold at price: " +s.getPrice() + 
-						" buy Volume: " + s.getIpoQty() );
-				Transaction t = new Transaction();
-				t.symbolName = s.getSymbol();
-				t.stockPrice = s.getPrice();
-				Scanner sc = new Scanner(System.in);
-				System.out.println("how many shares you wish to buy? ");
-				t.numberBought = sc.nextInt();
-				
-				Porfolio p = new Porfolio();
-				p.addStockToPortfolio(t);
-				p.printPortfolio(); //do this
-			}
-		}
-	}
+//	private static void searchForStock(String l, ArrayList<Stock> index) 
+//	{
+//		//get the stock in the index with the same name as the symbol I just typed in
+//		for(Stock s : index)
+//		{
+//			if(l.equalsIgnoreCase(s.getSymbol()))
+//			{
+//				System.out.println("bingo, I just found the stock I need..."); //worked!
+//				System.out.println("stock symbol: " +s.getSymbol() +
+//						" last sold at price: " +s.getPrice() + 
+//						" buy Volume: " + s.getIpoQty() );
+//				Transaction t = new Transaction();
+//				t.symbolName = s.getSymbol();
+//				t.stockPrice = s.getPrice();
+//				Scanner sc = new Scanner(System.in);
+//				System.out.println("how many shares you wish to buy? ");
+//				t.numberBought = sc.nextInt();
+//				
+//				Porfolio p = new Porfolio();
+//				p.addStockToPortfolio(t);
+//				p.printPortfolio(); //do this
+//			}
+//		}
+//	}
 
 	public static String provideTUI()
 	{ 

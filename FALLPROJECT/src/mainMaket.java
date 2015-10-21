@@ -23,7 +23,22 @@ public class mainMaket {
 		String l = provideTUI();
 							//this gives us 2 things, the market and a stock to look for
 		
-		searchForStock(l, m.getIndex());
+		//first, search for a stock by suppliying a string (give a string, get a stock)
+		Stock s = searchForStockWithString(l, m.getIndex());
+		
+		//then, ask if they wish to buy the stock
+		
+		//if so, make a transaction from that stock:
+		
+		Transaction t = makeTransactionFromStock(Stock stock);
+		
+		//next, add that transaction to a portfolio, which you created in main
+		Porfolio p = new Porfolio();
+		p.addStockToPortfolio(t);
+		p.printPortfolio();
+		
+		
+		
 		
 		buyAStock();
 	}

@@ -4,21 +4,26 @@ public class brainCenter {
 	public static void main(String[] args) 
 	{ 										//main compilation unit, runs first
 		
-		//System.out.println("hi, this just happened.");
+		System.out.println("MAIN BEGINNING NOW......");
 		
-		Stock l = new Stock();
+		Stock st = new Stock(); //your innovation
 		
-		// POPULATE THIS STOCK WITH SOME INFORMAITON: 
 		
-		l.industry = "locomotive"; //string, or word, which is a string of characters
+		String ind = "telecom"; //test this below: 
 		
-		l.price = 55.0; //price is a double, is a number, with decimals
+		if(st.industry.equalsIgnoreCase(ind))
+		{
+			System.out.println("the industry of this stock is telecom");
+
+		}
+		else
+		{
+			System.out.println("the industry of this stock is not telecom,");
+			System.out.println("the industry of this stock is: " + st.industry);
+
+
+		}
 		
-		l.ipoQty = 50000000; //an integer, no decimals!
-		
-		l.symbol = "GEL"; //for our sim, we'll assign randomly determined symbol names
-		
-		System.out.println("stock nameed " + l.symbol + " is priced at $" + l.price);
 
 	}
 	

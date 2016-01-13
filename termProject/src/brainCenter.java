@@ -2,30 +2,33 @@ import java.util.Random;
 
 public class brainCenter 
 {
-
 	public static void main(String[] args) 
 	{ 											//main compilation unit, runs first
-		System.out.println("MAIN BEGINNING NOW......");
-		
-		Random r = new Random(); //calling upon a java library, Random
+
 		Stock l = new Stock();
-		System.out.println("stock price is " + l.price + " and ipo qty is " + l.ipoQty);//proof of working randoms
+		/*
+		 * 
+		 * 
+		 * SET THE PRICE AND IPO QTY USING RANDOM NUMBERS, TO INITIALIZE YOUR FIRST STOCK!!
+		 */
+		l.printPriceAndIPOQTY();
 		
-		System.out.println("random number is " + r.nextInt(12000000));
-		
-		int limit = 5000000; 		//initializing,defining variables
-		int randomOutput = r.nextInt();
-		
-		if(randomOutput > limit) //conditional testing, if-else, flow control
-		{
-			System.out.println("random exceeds " + limit);
-		}
-		else
-		{
-			System.out.println("random, " + randomOutput +"is under the limit, " + limit);
-		}
 	}
-}
+}	
+//		System.out.println("random number is " + r.nextInt(12000000));
+//		
+//		int limit = 5000000; 		//initializing,defining variables
+//		int randomOutput = r.nextInt();
+//		
+//		if(randomOutput > limit) //conditional testing, if-else, flow control
+//		{
+//			System.out.println("random exceeds" + limit);
+//		}
+//		else
+//		{
+//			System.out.println("random, " + randomOutput +"is under the limit, " + limit);
+//		}
+
 		/*
 		Stock st = new Stock(); 				
 		String ind = "telecom"; 				//test this below: 

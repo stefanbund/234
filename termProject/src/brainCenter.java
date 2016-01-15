@@ -5,15 +5,13 @@ public class brainCenter
 	public static void main(String[] args) 
 	{ 											//main compilation unit, runs first
 
+		//Market m = new Market(6100);
 		Stock l = new Stock();
-		System.out.println("industry of stock is " + l.getIndustry());
-		System.out.println("price of stock : "+ l.price);
-		System.out.println("ipo quantity : " + l.ipoQty);
+		l.printPriceAndIPOQTY();
+
+		Buyer b = new Buyer();
 		
-		Stock j = new Stock("fishing", 77.99, 65383);
-		System.out.println("industry of stock is " + j.getIndustry());
-		System.out.println("price of stock : "+ j.price);
-		System.out.println("ipo quantity : " + j.ipoQty);
+		Hounddog h = new Hounddog();
 		
 	}
 }	

@@ -45,8 +45,8 @@ public class Stock //hopefully, we'll have thousand of stocks
 	public void printPriceAndIPOQTY()
 	{
 		System.out.println("price is now " + price);
-		System.out.println();
 		System.out.println("IPO Quantity is now " + ipoQty);
+		System.out.println("industry is " + industry);
 	}
 	
 	private int setIpoQty()
@@ -73,7 +73,8 @@ public class Stock //hopefully, we'll have thousand of stocks
 	/**
 	 * @return the industry
 	 */
-	public String getIndustry() {
+	public String getIndustry() 
+	{
 		return industry;
 	}
 

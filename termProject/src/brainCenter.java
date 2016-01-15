@@ -6,12 +6,14 @@ public class brainCenter
 	{ 											//main compilation unit, runs first
 
 		Stock l = new Stock();
-		/*
-		 * 
-		 * 
-		 * SET THE PRICE AND IPO QTY USING RANDOM NUMBERS, TO INITIALIZE YOUR FIRST STOCK!!
-		 */
-		l.printPriceAndIPOQTY();
+		System.out.println("industry of stock is " + l.getIndustry());
+		System.out.println("price of stock : "+ l.price);
+		System.out.println("ipo quantity : " + l.ipoQty);
+		
+		Stock j = new Stock("fishing", 77.99, 65383);
+		System.out.println("industry of stock is " + j.getIndustry());
+		System.out.println("price of stock : "+ j.price);
+		System.out.println("ipo quantity : " + j.ipoQty);
 		
 	}
 }	

@@ -4,15 +4,11 @@ public class brainCenter
 {
 	public static void main(String[] args) 
 	{ 											//main compilation unit, runs first
-
-		//Market m = new Market(6100);
-		Stock l = new Stock();
-		l.printPriceAndIPOQTY();
-
-		Buyer b = new Buyer();
-		
-		Hounddog h = new Hounddog();
-		
+		Market market = new Market(6000);
+												//what shape should the market take? 
+												// what data structure should house all my stocks? 
+		market.printMarket();
+				
 	}
 }	
 //		System.out.println("random number is " + r.nextInt(12000000));

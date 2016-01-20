@@ -23,10 +23,42 @@ public class Stock //hopefully, we'll have thousand of stocks
 	
 		ipoQty = setIpoQty(); //this is the rv value from setIpoQty()
 		
-		symbol = "GEL"; //for our sim, we'll assign randomly determined symbol names
+		symbol = setSymbol();  //for our sim, we'll assign randomly determined symbol names
 		
 	}
 	
+private String setSymbol() 
+{		
+	String returnValue = ""; //what we'll return to the calling function
+
+	for(int i= 0; i < 4; i++)	//start at 0, move up to 4, one increment at a time
+	{
+		String  l = getRandomLetter();
+		returnValue = returnValue + l;
+		//System.out.println("SS: symbol is now " + returnValue);
+	}
+	
+	return returnValue;
+}
+
+private String getRandomLetter() 
+{
+	String result = "";
+	Random r = new Random();
+	int characterResult = r.nextInt() * 1000000;
+	//System.out.println("random int was " + characterResult);
+	
+	if(characterResult <= 10000000)
+	{
+		result = "A";	//return a particular character
+	}else
+	{
+		result = "B"; //26 characters possible A - Z, 26 different return values possible
+	}
+	//System.out.println("GRL: my result is " + result); //clean
+	return result;
+}
+
 //	public Stock(String industry, double price, int ipoQty)
 //	{
 //		

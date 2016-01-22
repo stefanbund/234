@@ -11,7 +11,7 @@ public class Market {
 		for(int i = 0; i <= sizeOfMarket; i++)	//regular for loop, emphasis on the index, i
 		{
 			Stock l = new Stock();
-			
+			//int i1 = 0;
 			m.add(l);
 		}
 		

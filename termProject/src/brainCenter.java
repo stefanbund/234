@@ -1,4 +1,4 @@
-import java.util.Random;
+//import java.util.Random;
 
 public class brainCenter 
 {
@@ -7,7 +7,11 @@ public class brainCenter
 		Market market = new Market(6000);
 												//what shape should the market take? 
 												// what data structure should house all my stocks? 
-		market.printMarket();
+		market.printMarket(); //market exists
+		
+		Buyer b = new Buyer(); //print numTransactions, apt, budget
+		
+		
 				
 	}
 }	

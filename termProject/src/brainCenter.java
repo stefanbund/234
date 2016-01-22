@@ -10,7 +10,7 @@ public class brainCenter
 		market.printMarket(); //market exists
 		
 		Buyer b = new Buyer(); //print numTransactions, apt, budget
-		
+		b.buildRandomPortfolio(market);
 		
 				
 	}

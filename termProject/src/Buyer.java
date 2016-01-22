@@ -25,7 +25,8 @@ public class Buyer {
 		establishNumberOfTransactions();	//step two ok
 		
 		establishAPT(); //step three, budget per transaction
-		buildRandomPortfolio(); //portfolio is a collection of groups of stock we bought, transactions
+		//buildRandomPortfolio(Market ); //portfolio is a collection of groups of stock we bought, transactions
+	
 	}
 	
 	/**
@@ -52,15 +53,22 @@ public class Buyer {
 	 * algo: 
 	 * 1. take the budget, get numTransactions, determine apt
 	 * 
-	 * 2. get the market, randomly choose a stock to buy <--
-	 * 3. get the price of the chosen stock, then divide apt by the stock's price
+	 * 2. get the market, randomly choose a stock to buy  OK
+	 * 
+	 * 3. get the price of the chosen stock, then divide apt by the stock's price <--
 	 * 4. step 3 provides a volume of stock, numStock to buy
 	 * 5. make a transaction, wherein you buy numStock in (4), then 
 	 * 6. push the transaction into the Buyer's portfolio
 	 */
-	private void buildRandomPortfolio() 
+	public void buildRandomPortfolio(Market market) 
 	{
+		//the market, 6,000 stocks
+		Random r = new Random();
+		int ind = r.nextInt(6000);
 		
+		Stock l = market.m.get(ind); //!
+
+		System.out.println("RANDOM stock details for stock " + ind + " is " + l.symbol + "@ $" + l.price);
 	}
 
 	private void proveEstablishment() 
@@ -78,12 +86,8 @@ public class Buyer {
 	{
 		Random r = new Random();
 		budget = r.nextInt() / 100; //initialized, setting an initial value to something
-		if(budget < 0)
-		{
-			budget = budget * -1; //turn it positive
-		}
+		budget = Math.abs(budget);
 		System.out.println("budget is set to " + budget);
-
 	}
 	
 	

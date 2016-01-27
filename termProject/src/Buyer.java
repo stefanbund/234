@@ -58,7 +58,7 @@ public class Buyer {
 	 * 3. get the price of the chosen stock, then divide apt by the stock's price <--
 	 * 4. step 3 provides a volume of stock, numStock to buy
 	 * 5. make a transaction, wherein you buy numStock in (4), then 
-	 * 6. push the transaction into the Buyer's portfolio
+	 * 6. push the transaction into the Buyer's portfolio (use the .add() feature in the ArrayList)
 	 */
 	public void buildRandomPortfolio(Market market) 
 	{
@@ -66,9 +66,23 @@ public class Buyer {
 		Random r = new Random();
 		int ind = r.nextInt(6000);
 		
-		Stock l = market.m.get(ind); //!
+		Stock l = market.m.get(ind); //! gives you a randomly chosen stock
 
-		System.out.println("RANDOM stock details for stock " + ind + " is " + l.symbol + "@ $" + l.price);
+		System.out.println("RANDOM stock details for stock " + ind + " is " + l.symbol + "@ $" + l.price); //l represents the stock
+			//prepare to make a transaction at this point
+		
+			//define the variables necessary to make a transaction, purchase of stock
+		
+			//after you've made your transaction (Transaction t = new Transaction();, set its vars
+		
+		
+			//add the transaction onto the Portfolio, p, belonging to this Buyer
+		
+		
+			//project creates a large realistic market of stocks, creates one buyer who
+			//fills up his/her portfolio with a random number of transactions, 
+			//END
+	
 	}
 
 	private void proveEstablishment() 

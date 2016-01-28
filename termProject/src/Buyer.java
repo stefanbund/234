@@ -5,7 +5,7 @@ public class Buyer {
 	
 	/* DECLARATIONS: */
 	public double budget; //in currency
-	public int name; //identifier
+	private int name; //identifier
 	Portfolio p; 
 	int numTransactions; //determined randomly
 	double apt; //allocation per transaction, $ budgeted per transaction of stock
@@ -68,7 +68,7 @@ public class Buyer {
 		
 		Stock l = market.m.get(ind); //! gives you a randomly chosen stock
 
-		System.out.println("RANDOM stock details for stock " + ind + " is " + l.symbol + "@ $" + l.price); //l represents the stock
+		System.out.println("RANDOM stock details for stock " + ind + " is " + l.symbol + "@ $" + l.price + " in industry " + l.getIndustry()); //l represents the stock
 			//prepare to make a transaction at this point
 		
 			//define the variables necessary to make a transaction, purchase of stock

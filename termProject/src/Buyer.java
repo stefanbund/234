@@ -1,12 +1,14 @@
+import java.util.ArrayList;
 import java.util.Random;
 
 
 public class Buyer {
 	
 	/* DECLARATIONS: */
-	public double budget; //in currency
-	private int name; //identifier
+	public double budget; //in currency, credit the budget once you've sold something
+	public int name; //identifier
 	Portfolio p; 
+	public ArrayList<Transaction> portfolio = new ArrayList<Transaction>();
 	int numTransactions; //determined randomly
 	double apt; //allocation per transaction, $ budgeted per transaction of stock
 	
@@ -21,12 +23,9 @@ public class Buyer {
 		establishBudget(); //STEP ONE ok
 		establishBuyerName();
 		proveEstablishment();
-		
 		establishNumberOfTransactions();	//step two ok
-		
 		establishAPT(); //step three, budget per transaction
 		//buildRandomPortfolio(Market ); //portfolio is a collection of groups of stock we bought, transactions
-	
 	}
 	
 	/**
@@ -62,27 +61,49 @@ public class Buyer {
 	 */
 	public void buildRandomPortfolio(Market market) 
 	{
-		//the market, 6,000 stocks
-		Random r = new Random();
-		int ind = r.nextInt(6000);
+		//check for the stock in the market, if it's ipoQty == 0, 
+		//search the for-Sale-market, for stuff that's on sale [NEW RULE]
 		
-		Stock l = market.m.get(ind); //! gives you a randomly chosen stock
+		for(int i = 0; i <= numTransactions; i++)
+		{
+			Random r = new Random();
+			int ind = r.nextInt(6000);
+			Stock l = market.m.get(ind); 				//! gives you a randomly chosen stock
+			System.out.println("RANDOM stock details for stock " + ind + " is " + l.symbol + "@ $" + l.price + " in industry " + l.getIndustry()); //l represents the stock
+															//prepare to make a transaction at this point
+			Transaction t = new Transaction();
+			t.price = l.price;
+			t.symbol = l.symbol;
+			t.numStockPurchased = (int) (apt / l.price); //complete transaction
+			portfolio.add(t); //moves the transaction into the portfolio
+			
 
-		System.out.println("RANDOM stock details for stock " + ind + " is " + l.symbol + "@ $" + l.price + " in industry " + l.getIndustry()); //l represents the stock
-			//prepare to make a transaction at this point
+		}
 		
-			//define the variables necessary to make a transaction, purchase of stock
+		//now p is initialized, and full of Transactions
+		System.out.println("# shares       symbol      cost basis       total value");
+		System.out.println("_______________________________________________________");
+		for(Transaction t : portfolio)
+		{
+			System.out.println("" + t.numStockPurchased + "       " + t.symbol + "      " + t.price);
+		}
 		
-			//after you've made your transaction (Transaction t = new Transaction();, set its vars
-		
-		
-			//add the transaction onto the Portfolio, p, belonging to this Buyer
-		
-		
-			//project creates a large realistic market of stocks, creates one buyer who
-			//fills up his/her portfolio with a random number of transactions, 
-			//END
+		searchForSaleableHoldings();
+
 	
+	}
+/**
+ * 
+ * take the existing portfolio,
+ * loop through it
+ * check the price of the holding against the current price of the stock in the market
+ * if the price of the holding is less than the current market price, you've made $, 
+ * put it up for sale....
+ */
+	public ArrayList<Transaction> searchForSaleableHoldings() 
+	{
+		return portfolio;
+		
 	}
 
 	private void proveEstablishment() 

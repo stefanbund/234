@@ -5,6 +5,7 @@ public class Market {
 	
 	public ArrayList<Stock> m = new ArrayList<Stock>(); //arrays store large volumes of data
 														// in continguous memory blocks
+	public ArrayList<Transaction> forSaleMarket = new  ArrayList<Transaction>();
 
 	public Market(int sizeOfMarket) 		//ie, 6,000
 	{

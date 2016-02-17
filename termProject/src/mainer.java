@@ -5,40 +5,17 @@ import java.util.Random;
 
 public class mainer 
 {
-	public Market market; 
+	//public Market market; 
 	
 	public static void main(String[] args) 
 	{ 											//main compilation unit, runs first
 		Market market = new Market(6000);
-												//what shape should the market take? 
-												// what data structure should house all my stocks? 
-		//market.printMarket(); //market exists
-
 		for(int i = 0; i <= 100000; i++)
 		{
-			Buyer b = new Buyer(); //print numTransactions, apt, budget
-			b.buildRandomPortfolio(market);
-			
-						//for all transactions in your portfolio, adjust their prices upward
-			if(b.p != null)
-			{
-				for (Transaction t : b.p.portfolio)
-				{
-						//get the symbol name and search for it within the wider market
-						System.out.println("symbol in portfolio = " + t.symbol);
-						for(Stock l : market.m)
-						{
-							if(l.symbol.equalsIgnoreCase(t.symbol))
-							{
-								Random inc = new Random();
-								l.price = l.price + inc.nextDouble(); //ups the price a little bit
-							}
-						}
-				}
-			}
-			
+			Buyer b = new Buyer(); 									//print numTransactions, apt, budget
+			//System.out.println("new buyer made here...");
+			market  = b.buildRandomPortfolio(market); 				//== true
 		}
-				
 	}
 
 	/**

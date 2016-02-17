@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -11,7 +12,7 @@ public class Stock //hopefully, we'll have thousand of stocks
 	public double price;  		//55.89
 	public int ipoQty;		 //initial number of stock on sale
 	private String industry; 	//defined randomly
-	
+	ArrayList<Double> priceHistory = new ArrayList<Double>(); //history of price changes
 							//constructor, first thing that happens, when an instance of this object
 	public Stock()       	// POPULATE THIS STOCK WITH SOME INFORMAITON: 
 	{
@@ -25,6 +26,14 @@ public class Stock //hopefully, we'll have thousand of stocks
 		
 		symbol = setSymbol();  //for our sim, we'll assign randomly determined symbol names
 		
+	}
+	
+	public void displayPriceHistory()
+	{
+		for(Double h : priceHistory)
+		{
+			System.out.println("$"+ h);
+		}
 	}
 	
 private String setSymbol() 

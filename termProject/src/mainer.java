@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 //import java.util.Random;
 
@@ -18,13 +19,22 @@ public class mainer
 			Buyer b = new Buyer(); //print numTransactions, apt, budget
 			b.buildRandomPortfolio(market);
 			
-			ArrayList<Transaction> t = new ArrayList<Transaction>();//stuff for sale	
-			t = b.searchForSaleableHoldings(); //saleable holdings should be put upon the for-sale-market
-			updatePricingForBoughtStocks(t);
-
-			for(Transaction y : t)
+						//for all transactions in your portfolio, adjust their prices upward
+			if(b.p != null)
 			{
-				market.forSaleMarket.add(y); //balance out, as new buyers are added to the marketplace
+				for (Transaction t : b.p.portfolio)
+				{
+						//get the symbol name and search for it within the wider market
+						System.out.println("symbol in portfolio = " + t.symbol);
+						for(Stock l : market.m)
+						{
+							if(l.symbol.equalsIgnoreCase(t.symbol))
+							{
+								Random inc = new Random();
+								l.price = l.price + inc.nextDouble(); //ups the price a little bit
+							}
+						}
+				}
 			}
 			
 		}
@@ -36,20 +46,7 @@ public class mainer
 	 * @param t, a list of transactions you've selected as saleable
 	 * @param market, the current stock index of prices, which you'll adjust, once a sale is made
 	 */
-	private static void updatePricingForBoughtStocks(ArrayList<Transaction> t) 
-	{
-		
-		for(Transaction tr : t )
-		{
-							//get the stock symbol
-			//tr.price	
-							//search the market for the stock, by symbol
 	
-							//take that stock and adjust its price upward by a random number 
-			//double randomNewPriceIncrement = r.nextDouble(); //add new value to the price, after buying
-			//l.price += randomNewPriceIncrement;
-		}
-	}
 }	
 
 

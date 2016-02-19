@@ -53,17 +53,35 @@ private String setSymbol()
 private String getRandomLetter() 
 {
 	String result = "";
-	Random r = new Random();
-	int characterResult = r.nextInt() * 1000000;
+	Random r = new Random(26);
+	int characterResult = r.nextInt();
 	//System.out.println("random int was " + characterResult);
 	
-	if(characterResult <= 10000000)
+	switch(characterResult)
 	{
-		result = "A";	//return a particular character
-	}else
-	{
-		result = "B"; //26 characters possible A - Z, 26 different return values possible
+	case 1:
+		result = "A";
+	case 2:
+		result = "B";
+	case 3:
+		result = "C";
+	case 4:
+		result = "D";
+	case 5:
+		result = "E";
+	case 6:
+		result = "F";
+	case 7:
+		result = "G";
+	case 8:
+		result = "H";
+	case 9:
+		result = "I";
+	case 10:
+		result = "J";
+		
 	}
+	
 	//System.out.println("GRL: my result is " + result); //clean
 	return result;
 }

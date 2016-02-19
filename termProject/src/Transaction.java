@@ -4,7 +4,7 @@ public class Transaction {
 	//Stock l; 
 	
 	//symbol, price, 
-	public String buyerName; 
+	public int buyerName; 
 				//record the buyer's name in the transaction, for when they put it up for sale
 	public String symbol; 
 	public double price; 
